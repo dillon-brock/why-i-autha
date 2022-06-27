@@ -10,10 +10,12 @@ export async function getUser() {
 
 export async function signUp(email, password) {
     // *** implement supabase sign up
+    return client.auth.signUp({ email, password });
 }
 
 export async function signIn(email, password) {
     // *** implement supabase sign in
+    return client.auth.signIn({ email, password });
 }
 
 export async function signOut() {

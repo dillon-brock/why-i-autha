@@ -1,6 +1,6 @@
 // import services and utilities
 // *** import needed service methods
-
+import { signIn, signUp } from './services/members-service.js';
 // import component creators
 import createAuthForm from './components/AuthForm.js';
 import createAuthError from './components/AuthError.js';
@@ -20,7 +20,7 @@ async function handleSignIn(email, password) {
     // *** remove next line after verifying credentials are working
     console.log(email, password);
 
-    const response = null; // *** ? (don't forget call is asynchronous!)
+    const response = await signIn(email, password);
     checkAuth(response);
 }
 
@@ -28,13 +28,11 @@ async function handleSignUp(email, password) {
     // *** remove next line after verifying credentials are working
     console.log(email, password);
 
-    const response = null; // *** ? (don't forget call is asynchronous!)
+    const response = await signUp(email, password); // *** ? (don't forget call is asynchronous!)
     checkAuth(response);
 }
 
 function checkAuth(response) {
-    // *** remove next line after verifying user is being returned
-    console.log(response.user);
 
     if (response?.error) {
         // *** 
