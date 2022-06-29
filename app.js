@@ -21,16 +21,12 @@ async function handlePageLoad() {
 }
 
 async function handleSignIn(email, password) {
-    // *** remove next line after verifying credentials are working
-    console.log(email, password);
 
     const response = await signIn(email, password);
     checkAuth(response);
 }
 
 async function handleSignUp(email, password) {
-    // *** remove next line after verifying credentials are working
-    console.log(email, password);
 
     const response = await signUp(email, password); // *** ? (don't forget call is asynchronous!)
     checkAuth(response);
